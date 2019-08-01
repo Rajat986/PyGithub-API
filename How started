@@ -3,7 +3,7 @@ g = Github("Rajat986","yashvi986")
 user = g.get_user()
 print(user.login) #Get current user
 print(user.name) #Get user by name
-repo = g.get_repo("Rajat986/pygithub-api") #Get repository by name
+repo = g.get_repo("Rajat986/Tango-with-Django") #Get repository by name
 print(repo.name) 
 org = g.get_organization("PyGithub") #Get organization by name
 print(org.login)
@@ -18,3 +18,12 @@ for issue in open_issues:
 labels = repo.get_labels() #Get all the labels of the repository
 for label in labels:
     print(label)
+contents = repo.get_contents("") #Get all of the contents of the root directory of the repository
+for content_file in contents:
+    print(content_file)
+while contents: #Get all of the contents of the repository recursively
+    file_content = contents.pop(0)
+    if file_content.type == "dir":
+        print(contents.extend(repo.get_contents(file_content.path)))
+    else:
+        print(file_content)
