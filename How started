@@ -1,2 +1,2 @@
 from github import Github
-g = Github("access_token")
+g = Github("2b9387b8df33943c76d029e3f8bdd4af36656913")
