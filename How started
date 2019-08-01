@@ -3,7 +3,7 @@ g = Github("Rajat986","yashvi986")
 user = g.get_user()
 print(user.login) #Get current user
 print(user.name) #Get user by name
-repo = g.get_repo("Rajat986/cse") #Get repository by name
+repo = g.get_repo("Rajat986/pygithub-api") #Get repository by name
 print(repo.name) 
 org = g.get_organization("PyGithub") #Get organization by name
 print(org.login)
