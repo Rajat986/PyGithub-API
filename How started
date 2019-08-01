@@ -1,4 +1,9 @@
 from github import Github
-g = Github("2b9387b8df33943c76d029e3f8bdd4af36656913")
+g = Github("4285f791f9b5c5e4c7c29414009da92d96071fae")
 user = g.get_user()
 print(user.login)
+for repo in g.get_user().get_repos():
+    print(repo.name)
+    repo.edit(has_wiki=False)
+    # to see all the available attributes and methods
+    print(dir(repo))
