@@ -15,3 +15,6 @@ print(repo.stargazers_count) #Get count of stars
 open_issues = repo.get_issues(state='open')
 for issue in open_issues:
     print(issue)
+labels = repo.get_labels() #Get all the labels of the repository
+for label in labels:
+    print(label)
